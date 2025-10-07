@@ -6,11 +6,11 @@
 #    By: lomont <lomont@student.42lehavre.fr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/07 19:28:48 by lomont            #+#    #+#              #
-#    Updated: 2025/10/07 19:29:41 by lomont           ###   ########.fr        #
+#    Updated: 2025/10/07 23:40:11 by lomont           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = MFCOCF
+NAME = Fixed-Point_Class
 
 C++ = g++-15
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
