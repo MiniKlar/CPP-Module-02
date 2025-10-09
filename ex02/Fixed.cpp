@@ -6,7 +6,7 @@
 /*   By: lomont <lomont@student.42lehavre.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 19:30:15 by lomont            #+#    #+#             */
-/*   Updated: 2025/10/08 19:00:38 by lomont           ###   ########.fr       */
+/*   Updated: 2025/10/09 02:37:08 by lomont           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ Fixed::Fixed( void ) : value(0) {
 	return ;
 }
 
-Fixed::Fixed( int raw_value, bool is_raw ) : value(raw_value) {
-	//std::cout << "Raw value constructor called" << std::endl;
-	(void)is_raw;
-	return ;
-}
+// Fixed::Fixed( int raw_value, bool is_raw ) : value(raw_value) {
+// 	//std::cout << "Raw value constructor called" << std::endl;
+// 	(void)is_raw;
+// 	return ;
+// }
 
 Fixed::Fixed( const int n ) : value(n << bits) {
 	//std::cout << "Int constructor called" << std::endl;
@@ -52,24 +52,24 @@ Fixed& Fixed::operator=( Fixed const & other ) {
 	return (*this);
 }
 
-Fixed Fixed::operator-( Fixed const & other ) {
+float Fixed::operator-( Fixed const & other ) {
 	//std::cout << "Substraction operator called" << std::endl;
-	return Fixed( this->value - other.value, true);
+	return (this->toFloat() - other.toFloat());
 }
 
-Fixed Fixed::operator*( Fixed const & other ) {
+float Fixed::operator*( Fixed const & other ) {
 	//std::cout << "Multiplication operator called" << std::endl;
-	return Fixed((this->value * other.value) >> 8, true);
+	return (this->toFloat() * other.toFloat());
 }
 
-Fixed Fixed::operator/( Fixed const & other ) {
+float Fixed::operator/( Fixed const & other ) {
 	//std::cout << "Division operator called" << std::endl;
-	return Fixed((this->value * (1 << bits)) / other.value, true);
+	return (this->toFloat() / other.toFloat());
 }
 
-Fixed Fixed::operator+( Fixed const & other ) {
+float Fixed::operator+( Fixed const & other ) {
 	//std::cout << "Addition operator called" << std::endl;
-	return Fixed(this->value + other.value, true);
+	return (this->toFloat() + other.toFloat());
 }
 
 bool Fixed::operator<( Fixed const & other ) {

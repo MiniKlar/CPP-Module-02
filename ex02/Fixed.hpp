@@ -6,7 +6,7 @@
 /*   By: lomont <lomont@student.42lehavre.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 19:30:12 by lomont            #+#    #+#             */
-/*   Updated: 2025/10/08 19:03:49 by lomont           ###   ########.fr       */
+/*   Updated: 2025/10/09 02:33:51 by lomont           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ class Fixed {
 	private:
 		int value;
 		static const int bits = 8;
-		Fixed(int raw_value, bool is_raw);
 	public:
 		//constructors & destructor
 		Fixed( void );
@@ -34,10 +33,11 @@ class Fixed {
 		//operators overload
 
 		Fixed& operator=( Fixed const & other);
-		Fixed operator-( Fixed const & other );
-		Fixed operator+( Fixed const & other );
-		Fixed operator*( Fixed const & other );
-		Fixed operator/( Fixed const & other );
+
+		float operator-( Fixed const & other );
+		float operator+( Fixed const & other );
+		float operator*( Fixed const & other );
+		float operator/( Fixed const & other );
 
 		bool operator<( Fixed const & other );
 		bool operator<=( Fixed const & other );
