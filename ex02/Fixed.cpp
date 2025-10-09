@@ -6,7 +6,7 @@
 /*   By: lomont <lomont@student.42lehavre.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 19:30:15 by lomont            #+#    #+#             */
-/*   Updated: 2025/10/09 02:37:08 by lomont           ###   ########.fr       */
+/*   Updated: 2025/10/09 02:45:32 by lomont           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,6 @@ Fixed::Fixed( void ) : value(0) {
 	//std::cout << "Default constructor called" << std::endl;
 	return ;
 }
-
-// Fixed::Fixed( int raw_value, bool is_raw ) : value(raw_value) {
-// 	//std::cout << "Raw value constructor called" << std::endl;
-// 	(void)is_raw;
-// 	return ;
-// }
 
 Fixed::Fixed( const int n ) : value(n << bits) {
 	//std::cout << "Int constructor called" << std::endl;
